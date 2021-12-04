@@ -1,0 +1,11 @@
+kubernetes apiVersion: v1
+kind: Service
+metadata:
+  name: app-api-service
+spec:
+  selector:
+    app: app-api
+  ports:
+  - port: 8080
+    targetPort: 80
+  type: LoadBalancer

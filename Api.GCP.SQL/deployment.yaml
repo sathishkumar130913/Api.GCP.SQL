@@ -1,0 +1,22 @@
+kubernets apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: app-api
+  template:
+    metadata:
+      labels:
+        app: app-api
+    spec:
+      containers:
+      - name: app-api-container
+        image: gcr.io/dps-parent-project/app-api:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
