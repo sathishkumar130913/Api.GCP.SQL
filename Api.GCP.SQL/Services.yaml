@@ -1,7 +1,7 @@
 kubernetes apiVersion: v1
 kind: Service
 metadata:
-  name: app-api-service
+  name: app-api-services
 spec:
   selector:
     app: app-api
